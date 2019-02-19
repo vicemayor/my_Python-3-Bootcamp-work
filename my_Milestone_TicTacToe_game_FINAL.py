@@ -10,9 +10,9 @@ game_active = "y"
 # use a while loop to control game repeat
 while game_active == "y":
     import time
-    from IPython.display import clear_output
+    import os
     
-    clear_output()
+    os.system('cls')
     
     # create a dictionary to store each board location and the player whose token holds it. Will be used to track changes during gameplay
     board_locs_dict = {1:"1",2:"2",3:"3",4:"4",5:"5",6:"6",7:"7",8:"8",9:"9"}
@@ -111,7 +111,7 @@ we'll need a little bit more information...\n""")
     # create a variable that will be used to alternate between players. Start at player 1
     cur_player = player_dict["p1"]
     
-    clear_output()
+    os.system('cls')
     
     # begin a while loop referring to the length of the board tracking list. Each turn will remove an element from the list, so
     # the loop will end when all selections have been exhausted
@@ -122,7 +122,7 @@ we'll need a little bit more information...\n""")
         board_locs_dict[p_choice] = cur_player[1]
         board_tracking_list.pop(board_tracking_list.index(p_choice))
         if check_for_win() is True:
-            clear_output()
+            os.system('cls')
             time.sleep(1)
             print("\nWe have a winner!\n")
             time.sleep(1)
@@ -136,7 +136,7 @@ we'll need a little bit more information...\n""")
             else:
                 cur_player = player_dict["p1"]
         time.sleep(1)
-        clear_output()
+        os.system('cls')
 
     time.sleep(3)
 
@@ -156,3 +156,4 @@ time.sleep(2)
 
 print("\nOkay, later on!")
 
+time.sleep(4)
